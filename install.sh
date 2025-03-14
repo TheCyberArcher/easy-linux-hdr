@@ -284,7 +284,7 @@ fi
 echo ''
 echo ''
 echo "---> Transfering Auto-HDR shaders"
-for url in https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/AdvancedAutoHDR.fx https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/Color.fxhhttps://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/ConvertColorSpace.fx
+for url in https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/AdvancedAutoHDR.fx https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/Color.fxh https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/ConvertColorSpace.fx
 do
  curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
 done
