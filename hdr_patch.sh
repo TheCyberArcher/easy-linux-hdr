@@ -169,11 +169,11 @@ echo "Linking ReShade files to game directory."
 if [[ $exeArch == 32 ]]; then
     echo "Linking ReShade32.dll to $wantedDll.dll."
     ln -is "$(realpath "$RESHADE_PATH/$RESHADE_VERSION"/ReShade32.dll)" "$gamePath/$wantedDll.dll"
-    cp $HOME/.local/share/reshade/hdr_addon/AutoHDR.addon32 $gamePath
+    cp $HOME/.local/share/reshade/hdr_addon/AutoHDR.addon32 "$gamePath"
 else
     echo "Linking ReShade64.dll to $wantedDll.dll."
     ln -is "$(realpath "$RESHADE_PATH/$RESHADE_VERSION"/ReShade64.dll)" "$gamePath/$wantedDll.dll"
-    cp $HOME/.local/share/reshade/hdr_addon/AutoHDR.addon64 $gamePath
+    cp $HOME/.local/share/reshade/hdr_addon/AutoHDR.addon64 "$gamePath"
 fi
 [[ -L $gamePath/d3dcompiler_47.dll ]] && unlink "$gamePath/d3dcompiler_47.dll"
 ln -is "$(realpath "$MAIN_PATH/d3dcompiler_47.dll.$exeArch")" "$gamePath/d3dcompiler_47.dll"
@@ -189,7 +189,7 @@ if [[ -f $MAIN_PATH/$LINK_PRESET ]]; then
     ln -is "$(realpath "$MAIN_PATH/$LINK_PRESET")" "$gamePath/$LINK_PRESET"
 fi
 
-cat > $gamePath/ReShadePreset.ini <<SETTINGS
+cat > "$gamePath"/ReShadePreset.ini <<SETTINGS
 Techniques=AdvancedAutoHDR@AdvancedAutoHDR.fx
 TechniqueSorting=AdvancedAutoHDR@AdvancedAutoHDR.fx
 
