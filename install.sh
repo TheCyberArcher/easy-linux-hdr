@@ -134,9 +134,7 @@ for REQUIRED_EXECUTABLE in $REQUIRED_EXECUTABLES; do
     fi
 done
 
-mkdir -p "$MAIN_PATH" || printErr "Unable to create directory '$MAIN_PATH'."
-cd "$MAIN_PATH" || exit
-
+mkdir -p "$MAIN_PATH"
 mkdir -p "$RESHADE_PATH"
 mkdir -p "$MAIN_PATH/ReShade_shaders"
 mkdir -p "$MAIN_PATH/External_shaders"
@@ -150,11 +148,11 @@ echo -e "$SEPERATOR\nReShade HDR mods for Linux games\n$SEPERATOR\n"
 
 echo 'installing hdr_autoswitch'
 
-mv hdr_patch.sh $HOME/.local/share/reshade/
+mv ./hdr_patch.sh $HOME/.local/share/reshade/
 
 echo 'installing hdr_patch for kde'
 
-mv hdr_autoswitch.sh $HOME/.local/share/reshade/
+mv ./hdr_autoswitch.sh $HOME/.local/share/reshade/
 
 function linkShaderFiles() {
     [[ ! -d $1 ]] && return
@@ -293,4 +291,4 @@ echo '---> HDR environment variable installation (confirm with password if neces
 echo ''
 
 echo "alias hdr_patch=/$HOME/.local/share/reshade/hdr_patch.sh" >> $HOME/.bashrc
-su - echo"export HDR=/$HOME/.local/share/reshade/hdr_autoswitch.sh" >> $HOME/.config/plasma-workspace/env/hdr-env.sh
+echo"export HDR=/$HOME/.local/share/reshade/hdr_autoswitch.sh" >> $HOME/.config/plasma-workspace/env/hdr-env.sh
