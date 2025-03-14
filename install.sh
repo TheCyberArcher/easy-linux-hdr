@@ -284,7 +284,10 @@ fi
 echo ''
 echo ''
 echo "---> Transfering PumboHDR shaders"
-mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/ConvertColorSpace.fx Color.fxh AdvancedAutoHDR.fx
+mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/ConvertColorSpace.fx
+mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/Color.fxh
+AdvancedAutoHDR.fx
+
 echo "---> HDR addon installation (for hdr game patching)"
 
 curl -sLO --create-dirs --output-dir "$MAIN_PATH/hdr_addon/" https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64
