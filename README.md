@@ -75,7 +75,9 @@ Copy the path in your file manager
 
 ---
 
+
 >UPDATE : This part is now automated with the hdr_patch.sh script. Only follow the guide if you want to make manual changes
+
 
 -> **Download the [HDR addon](https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/tag/2024.04.17) and paste in the game folder**
 
