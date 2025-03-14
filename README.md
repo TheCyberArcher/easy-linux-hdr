@@ -72,7 +72,7 @@ Copy the path in your file manager
 -> **The software will automatically patch your game with best HDR mods settings** \
 
 
-MANUAL PART (TODO UPDATE)
+---
 
 
 -> **Download the [HDR addon](https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/tag/2024.04.17) and paste in the game folder**
