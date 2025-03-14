@@ -301,7 +301,7 @@ done
 echo "---> HDR addon installation (for hdr game patching)"
 curl -sLO --create-dirs --output-dir "$MAIN_PATH/hdr_addon/" https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64
 echo ''
-echo '---> HDR environment variable installation (confirm with password if necessary)'
+echo '---> HDR environment variable installation'
 echo ''
 echo "alias hdr_patch=/$HOME/.local/share/reshade/hdr_patch.sh" >> $HOME/.bashrc
 echo "export HDR=/$HOME/.local/share/reshade/hdr_autoswitch.sh" >> $HOME/.config/plasma-workspace/env/hdr-env.sh
