@@ -284,24 +284,24 @@ fi
 echo ''
 echo ''
 echo "---> Transfering Auto-HDR shaders"
-
-git clone https://github.com/TheCyberArcher/auto-hdr-repo $MAIN_PATH/ReShade_shaders/Merged/Shaders/
-
+for url in https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/AdvancedAutoHDR.fx https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/Color.fxhhttps://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/ConvertColorSpace.fx
+do
+ curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+done
 echo "---> Transfering Lilium HDR shaders"
-
-git clone https://github.com/EndlesslyFlowering/ReShade_HDR_shaders $MAIN_PATH/ReShade_shaders/Merged/Shaders/
-
+for url in https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__cas_hdr.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__filmgrain.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__hdr_and_sdr_analysis.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__hdr_black_floor_fix.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__inverse_tone_mapping.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__map_sdr_into_hdr.fx  https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__rcas_hdr.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__sdr_trc_fix.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__test_pattern_generator.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__tone_mapping.fx
+do
+ curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+done
 echo "---> Transfering maxG2D HDR  shaders"
-
-git clone https://github.com/MaxG2D/ReshadeSimpleHDRShaders $MAIN_PATH/ReShade_shaders/Merged/Shaders/
-
+for url in https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRBloom.fx https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRMotionBlur.fx https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRSaturation.fx https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRShadersFunctions.fxh
+do
+ curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+done
 echo "---> HDR addon installation (for hdr game patching)"
-
 curl -sLO --create-dirs --output-dir "$MAIN_PATH/hdr_addon/" https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64
-
 echo ''
 echo '---> HDR environment variable installation (confirm with password if necessary)'
 echo ''
-
 echo "alias hdr_patch=/$HOME/.local/share/reshade/hdr_patch.sh" >> $HOME/.bashrc
 echo "export HDR=/$HOME/.local/share/reshade/hdr_autoswitch.sh" >> $HOME/.config/plasma-workspace/env/hdr-env.sh
