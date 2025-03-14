@@ -119,7 +119,7 @@ UPDATE_RESHADE=${UPDATE_RESHADE:-1}
 MERGE_SHADERS=${MERGE_SHADERS:-1}
 VULKAN_SUPPORT=${VULKAN_SUPPORT:-0}
 GLOBAL_INI=${GLOBAL_INI:-"ReShade.ini"}
-SHADER_REPOS=${SHADER_REPOS:-"https://github.com/CeeJayDK/SweetFX|sweetfx-shaders;https://github.com/martymcmodding/qUINT|martymc-shaders;https://github.com/BlueSkyDefender/AstrayFX|astrayfx-shaders;https://github.com/prod80/prod80-ReShade-Repository|prod80-shaders;https://github.com/crosire/reshade-shaders|reshade-shaders|slim;https://github.com/TheCyberArcher/auto-hdr-repo/|pumbo-hdr;https://github.com/EndlesslyFlowering/ReShade_HDR_shaders|lilium-hdr;https://github.com/MaxG2D/ReshadeSimpleHDRShaders|maxg2d-hdr"}
+SHADER_REPOS=${SHADER_REPOS:-"https://github.com/CeeJayDK/SweetFX|sweetfx-shaders;https://github.com/martymcmodding/qUINT|martymc-shaders;https://github.com/BlueSkyDefender/AstrayFX|astrayfx-shaders;https://github.com/prod80/prod80-ReShade-Repository|prod80-shaders;https://github.com/crosire/reshade-shaders|reshade-shaders|slim;"}
 RESHADE_VERSION=${RESHADE_VERSION:-"latest"}
 RESHADE_ADDON_SUPPORT=${RESHADE_ADDON_SUPPORT:-0}
 FORCE_RESHADE_UPDATE_CHECK=${FORCE_RESHADE_UPDATE_CHECK:-0}
@@ -283,11 +283,17 @@ fi
 
 echo ''
 echo ''
-echo "---> Transfering PumboHDR shaders"
+echo "---> Transfering Auto-HDR shaders"
 
-mv $HOME/.local/share/reshade/ReShade_shaders/pumbo-hdr/Shaders/Pumbo/ConvertColorSpace.fx $MAIN_PATH/ReShade_shaders/Merged/Shaders/
-mv $HOME/.local/share/reshade/ReShade_shaders/pumbo-hdr/Shaders/PumboColor.fxh $MAIN_PATH/ReShade_shaders/Merged/Shaders/
-mv $HOME/.local/share/reshade/ReShade_shaders/pumbo-hdr/Shaders/AdvancedAutoHDR.fx $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+git clone https://github.com/TheCyberArcher/auto-hdr-repo $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+
+echo "---> Transfering Lilium HDR shaders"
+
+git clone https://github.com/EndlesslyFlowering/ReShade_HDR_shaders $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+
+echo "---> Transfering maxG2D HDR  shaders"
+
+git clone https://github.com/MaxG2D/ReshadeSimpleHDRShaders $MAIN_PATH/ReShade_shaders/Merged/Shaders/
 
 echo "---> HDR addon installation (for hdr game patching)"
 
