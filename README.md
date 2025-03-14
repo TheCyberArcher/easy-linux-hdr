@@ -1,8 +1,8 @@
 # easy-linux-hdr
 
-
 >This script is there to make it easier to set up HDR under Linux, the resources are lacking and it is tedious to install everything manually. The objective is to provide a simple, transparent and accessible experience for a user and allow him to take advantage of his uncompromising equipment, while remaining in the free and opensource world.
 
+[![image.png](https://i.postimg.cc/t44Ft80x/image.png)](https://postimg.cc/vcC1GqZY)
 
 >It is important to take into account that this installer is planned for an [Archlinux](https://archlinux.org/) distribution (and its derivatives) with a [KDE](https://kde.org/fr/plasma-desktop/) desktop environment. For what ? It is the only desktop for the HDR and the features are mature enough to allow a correct experience with the [Wayland](https://wayland.freedesktop.org/) protocol.
 
