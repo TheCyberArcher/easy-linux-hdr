@@ -284,7 +284,7 @@ echo ''
 echo '---> HDR environement variable installation (confirm with password if necessary)'
 echo ''
 
-mv ./hdr_patch.sh $HOME/.local/share/reshade/
-mv ./hdr_autoswitch.sh $HOME/.local/share/reshade/
+mv hdr_patch.sh $HOME/.local/share/reshade/
+mv hdr_autoswitch.sh $HOME/.local/share/reshade/
 echo "alias hdr_patch=/$HOME/.local/share/reshade/hdr_patch.sh" >> $HOME/.bashrc
 sudo echo "export HDR=/$HOME/.local/share/reshade/hdr_autoswitch.sh" >> /$HOME/.config/plasma-workspace/env/hdr-env.sh
