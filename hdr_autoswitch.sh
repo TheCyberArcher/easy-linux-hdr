@@ -17,7 +17,7 @@ fi;
 if [ ${action} == "on" ];
 then
   echo "Enabling HDR"
-  kscreen-doctor output.$SCREEN.wcg.enable output.$SCREEN.hdr.enable output.$SCREEN.brightness.60;
+  kscreen-doctor output.$SCREEN.wcg.enable output.$SCREEN.hdr.enable output.$SCREEN.brightness.100;
 elif [ ${action} == "off" ];
 then
   echo "Disabling HDR"
