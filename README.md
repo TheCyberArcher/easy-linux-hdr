@@ -1,5 +1,3 @@
-# easy-linux-hdr
-
 >This script is there to make it easier to set up HDR under Linux, the resources are lacking and it is tedious to install everything manually. The objective is to provide a simple, transparent and accessible experience for a user and allow him to take advantage of his uncompromising equipment, while remaining in the free and opensource world.
 
 [![image.png](https://i.postimg.cc/t44Ft80x/image.png)](https://postimg.cc/vcC1GqZY)
