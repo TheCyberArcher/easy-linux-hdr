@@ -299,7 +299,9 @@ do
  curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
 done
 echo "---> HDR addon installation (for hdr game patching)"
-curl -sLO --create-dirs --output-dir "$MAIN_PATH/hdr_addon/" https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64
+for url in https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64 https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon32
+do curl -sLO $url --create-dirs --output-dir "$MAIN_PATH/hdr_addon/"
+done
 echo ''
 echo '---> HDR environment variable installation'
 echo ''
