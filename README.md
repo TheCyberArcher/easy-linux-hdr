@@ -31,7 +31,7 @@
 git clone https://github.com/TheCyberArcher/easy-linux-hdr
 cd ./easy-linux-hdr
 chmod +x install.sh
-bash RESHADE_ADDON_SUPPORT=1 install.sh
+RESHADE_ADDON_SUPPORT=1 ./install.sh
 ``` 
 
 ---
