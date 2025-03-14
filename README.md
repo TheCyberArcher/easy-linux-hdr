@@ -29,8 +29,8 @@
 
 ```
 git clone https://github.com/TheCyberArcher/easy-linux-hdr
+chmod -R +x easy-linux-hdr
 cd ./easy-linux-hdr
-chmod +x install.sh
 RESHADE_ADDON_SUPPORT=1 ./install.sh
 ``` 
 
