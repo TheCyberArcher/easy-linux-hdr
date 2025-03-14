@@ -74,19 +74,17 @@ Copy the path in your file manager
 
 Add this at steam launch options :
 
-$HDR on && gamescope --hdr-enabled -W 3840 -H 2160 -f -e --force-grab-cursor -WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" -- %command%; $HDR off
+```$HDR on && gamescope --hdr-enabled -W 3840 -H 2160 -f -e --force-grab-cursor -WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" -- %command%; $HDR off```
 
 ---
 
+</br>
 
 >UPDATE : This part is now automated with the hdr_patch.sh script. Only follow the guide if you want to make manual changes
 
+</br>
 
 -> **Download the [HDR addon](https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/tag/2024.04.17) and paste in the game folder**
-
-Add this at steam launch options : 
-
-``` $HDR on && gamescope --hdr-enabled -W 3840 -H 2160 -f -e --force-grab-cursor -WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" -- %command%; $HDR off ```
 
 -> In the game press **"Home"** keyboard key to open reshade.
 
