@@ -284,9 +284,9 @@ fi
 echo ''
 echo ''
 echo "---> Transfering PumboHDR shaders"
-mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/ConvertColorSpace.fx
-mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/Color.fxh
-AdvancedAutoHDR.fx
+mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/ConvertColorSpace.fx $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/Color.fxh $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+mv $MAIN_PATH/ReShade_shaders/Merged/Shaders/pumbo-hdr/AdvancedAutoHDR.fx $MAIN_PATH/ReShade_shaders/Merged/Shaders/
 
 echo "---> HDR addon installation (for hdr game patching)"
 
