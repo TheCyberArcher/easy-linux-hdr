@@ -1,4 +1,4 @@
-#!/bin/bash
+SCREEN=$(xrandr --listactivemonitors | awk '{print $NF}' | tail +2)
 
 usage() { echo "Usage: $0 <on|off>" 1>&2; exit 1; }
 
@@ -17,11 +17,11 @@ fi;
 if [ ${action} == "on" ];
 then
   echo "Enabling HDR"
-  kscreen-doctor output.DP-2.wcg.enable output.DP-2.hdr.enable output.DP-2.brightness.100;
+  kscreen-doctor output.$SCREEN.wcg.enable output.$SCREEN.hdr.enable output.$SCREEN.brightness.60;
 elif [ ${action} == "off" ];
 then
   echo "Disabling HDR"
-  kscreen-doctor output.DP-2.wcg.disable output.DP-2.hdr.disable output.DP-2.brightness.30;
+  kscreen-doctor output.$SCREEN.wcg.disable output.$SCREEN.hdr.disable output.$SCREEN.brightness.30;
 else
   usage;
 fi;
