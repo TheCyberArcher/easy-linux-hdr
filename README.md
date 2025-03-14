@@ -72,6 +72,9 @@ Copy the path in your file manager
 
 -> **The software will automatically patch your game with best HDR mods settings 😁**
 
+Add this at steam launch options :
+
+$HDR on && gamescope --hdr-enabled -W 3840 -H 2160 -f -e --force-grab-cursor -WINEDLLOVERRIDES="d3dcompiler_47=n;dxgi=n,b" -- %command%; $HDR off
 
 ---
 
