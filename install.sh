@@ -148,6 +148,14 @@ mkdir -p "$MAIN_PATH/External_shaders"
 
 echo -e "$SEPERATOR\nReShade HDR mods for Linux games\n$SEPERATOR\n"
 
+echo 'installing hdr_autoswitch'
+
+mv hdr_patch.sh $HOME/.local/share/reshade/
+
+echo 'installing hdr_patch for kde'
+
+mv hdr_autoswitch.sh $HOME/.local/share/reshade/
+
 function linkShaderFiles() {
     [[ ! -d $1 ]] && return
     cd "$1" || return
@@ -284,7 +292,5 @@ echo ''
 echo '---> HDR environement variable installation (confirm with password if necessary)'
 echo ''
 
-mv hdr_patch.sh $HOME/.local/share/reshade/
-mv hdr_autoswitch.sh $HOME/.local/share/reshade/
 echo "alias hdr_patch=/$HOME/.local/share/reshade/hdr_patch.sh" >> $HOME/.bashrc
 sudo echo "export HDR=/$HOME/.local/share/reshade/hdr_autoswitch.sh" >> /$HOME/.config/plasma-workspace/env/hdr-env.sh
