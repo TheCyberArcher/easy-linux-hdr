@@ -286,17 +286,17 @@ echo ''
 echo "---> Transfering Auto-HDR shaders"
 for url in https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/AdvancedAutoHDR.fx https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/Color.fxh https://github.com/Filoppi/PumboAutoHDR/blob/master/Shaders/Pumbo/ConvertColorSpace.fx
 do
- curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+ curl -sLO $url "$MAIN_PATH/ReShade_shaders/Merged/Shaders/"
 done
 echo "---> Transfering Lilium HDR shaders"
 for url in https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__cas_hdr.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__filmgrain.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__hdr_and_sdr_analysis.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__hdr_black_floor_fix.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__inverse_tone_mapping.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__map_sdr_into_hdr.fx  https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__rcas_hdr.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__sdr_trc_fix.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__test_pattern_generator.fx https://github.com/EndlesslyFlowering/ReShade_HDR_shaders/blob/master/Shaders/lilium__tone_mapping.fx
 do
- curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+ curl -sLO $url "$MAIN_PATH/ReShade_shaders/Merged/Shaders/"
 done
 echo "---> Transfering maxG2D HDR  shaders"
 for url in https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRBloom.fx https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRMotionBlur.fx https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRSaturation.fx https://github.com/MaxG2D/ReshadeSimpleHDRShaders/blob/main/Shaders/HDRShadersFunctions.fxh
 do
- curl -sLO $url $MAIN_PATH/ReShade_shaders/Merged/Shaders/
+ curl -sLO $url "$MAIN_PATH/ReShade_shaders/Merged/Shaders/"
 done
 echo "---> HDR addon installation (for hdr game patching)"
 for url in https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64 https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon32
