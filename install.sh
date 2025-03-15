@@ -45,6 +45,8 @@ yes_or_no "$message"
 echo ''
 echo ''
 
+if $message = 1 ; do "exit"
+
 PACKAGE1=gamescope-plus
 PACKAGE2=vk-hdr-layer-kwin6-git
 
