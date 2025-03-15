@@ -1,5 +1,26 @@
 #!/bin/bash
 
+# Variables declaration :
+
+SEPERATOR="------------------------------------------------------------------------------------------------"
+COMMON_OVERRIDES="d3d8 d3d9 d3d11 ddraw dinput8 dxgi opengl32"
+REQUIRED_EXECUTABLES="7z curl git grep"
+#XDG_DATA_HOME=${XDG_DATA_HOME:-"$HOME/.local/share"}
+MAIN_PATH=${MAIN_PATH:-"$HOME/.local/share/reshade"}
+RESHADE_PATH="$MAIN_PATH/reshade"
+WINE_MAIN_PATH="$(echo "$MAIN_PATH" | sed "s#/home/$USER/##" | sed 's#/#\\\\#g')"
+UPDATE_RESHADE=${UPDATE_RESHADE:-1}
+MERGE_SHADERS=${MERGE_SHADERS:-1}
+VULKAN_SUPPORT=${VULKAN_SUPPORT:-0}
+GLOBAL_INI=${GLOBAL_INI:-"ReShade.ini"}
+SHADER_REPOS=${SHADER_REPOS:-"https://github.com/CeeJayDK/SweetFX|sweetfx-shaders;https://github.com/martymcmodding/qUINT|martymc-shaders;https://github.com/BlueSkyDefender/AstrayFX|astrayfx-shaders;https://github.com/prod80/prod80-ReShade-Repository|prod80-shaders;https://github.com/crosire/reshade-shaders|reshade-shaders|slim;"}
+RESHADE_VERSION=${RESHADE_VERSION:-"latest"}
+RESHADE_ADDON_SUPPORT=${RESHADE_ADDON_SUPPORT:-0}
+FORCE_RESHADE_UPDATE_CHECK=${FORCE_RESHADE_UPDATE_CHECK:-0}
+RESHADE_URL="https://reshade.me"
+RESHADE_URL_ALT="http://static.reshade.me"
+HDR_LINUX_ADDON="https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64"
+
 echo ''
 echo ''
 echo ''
@@ -108,25 +129,6 @@ function downloadReshade() {
     removeTempDir
 }
 
-SEPERATOR="------------------------------------------------------------------------------------------------"
-COMMON_OVERRIDES="d3d8 d3d9 d3d11 ddraw dinput8 dxgi opengl32"
-REQUIRED_EXECUTABLES="7z curl git grep"
-#XDG_DATA_HOME=${XDG_DATA_HOME:-"$HOME/.local/share"}
-MAIN_PATH=${MAIN_PATH:-"$HOME/.local/share/reshade"}
-RESHADE_PATH="$MAIN_PATH/reshade"
-WINE_MAIN_PATH="$(echo "$MAIN_PATH" | sed "s#/home/$USER/##" | sed 's#/#\\\\#g')"
-UPDATE_RESHADE=${UPDATE_RESHADE:-1}
-MERGE_SHADERS=${MERGE_SHADERS:-1}
-VULKAN_SUPPORT=${VULKAN_SUPPORT:-0}
-GLOBAL_INI=${GLOBAL_INI:-"ReShade.ini"}
-SHADER_REPOS=${SHADER_REPOS:-"https://github.com/CeeJayDK/SweetFX|sweetfx-shaders;https://github.com/martymcmodding/qUINT|martymc-shaders;https://github.com/BlueSkyDefender/AstrayFX|astrayfx-shaders;https://github.com/prod80/prod80-ReShade-Repository|prod80-shaders;https://github.com/crosire/reshade-shaders|reshade-shaders|slim;"}
-RESHADE_VERSION=${RESHADE_VERSION:-"latest"}
-RESHADE_ADDON_SUPPORT=${RESHADE_ADDON_SUPPORT:-0}
-FORCE_RESHADE_UPDATE_CHECK=${FORCE_RESHADE_UPDATE_CHECK:-0}
-RESHADE_URL="https://reshade.me"
-RESHADE_URL_ALT="http://static.reshade.me"
-HDR_LINUX_ADDON="https://github.com/EndlesslyFlowering/AutoHDR-ReShade/releases/download/2024.04.17/AutoHDR.addon64"
-
 for REQUIRED_EXECUTABLE in $REQUIRED_EXECUTABLES; do
     if ! which "$REQUIRED_EXECUTABLE" &> /dev/null; then
         echo -ne "Program '$REQUIRED_EXECUTABLE' is missing, but it is required.\nExiting.\n"
@@ -216,8 +218,6 @@ if [[ -n $SHADER_REPOS ]]; then
 fi
 echo "$SEPERATOR"
 
-
-
 cd "$MAIN_PATH" || exit
 [[ -f LVERS ]] && LVERS=$(cat LVERS) || LVERS=0
 if [[ $RESHADE_VERSION == latest ]]; then
@@ -252,8 +252,6 @@ if [[ $FORCE_RESHADE_UPDATE_CHECK -eq 1 ]] || [[ $UPDATE_RESHADE -eq 1 ]] || [[ 
     fi
 fi
 
-
-
 cd "$MAIN_PATH" || exit
 if [[ $RESHADE_VERSION != latest ]]; then
     [[ $RESHADE_ADDON_SUPPORT -eq 1 ]] && RESHADE_VERSION="${RESHADE_VERSION}_Addon"
@@ -266,8 +264,6 @@ if [[ $RESHADE_VERSION != latest ]]; then
 else
     echo -e "Using the latest version of ReShade ($LVERS).\n"
 fi
-
-
 
 if [[ $GLOBAL_INI != 0 ]] && [[ $GLOBAL_INI == ReShade.ini ]] && [[ ! -f $MAIN_PATH/$GLOBAL_INI ]]; then
     cd "$MAIN_PATH" || exit
