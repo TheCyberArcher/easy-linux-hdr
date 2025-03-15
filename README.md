@@ -70,6 +70,7 @@ Copy the path in your file manager
 
 
 -> **The software will automatically patch your game with best HDR mods settings 😁**
+-> **The games are already configured and HDR enabled, you don't need to touch the settings (Peak brightness at 750 nits max)
 
 Add this at steam launch options :
 
